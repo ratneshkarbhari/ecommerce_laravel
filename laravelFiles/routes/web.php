@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageLoader;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    echo "<h1>Hello World</h1>";
-});
+Route::get('/', [PageLoader::class,"home"]);
+Route::get("/login",[PageLoader::class,"login"]);
+Route::get("/register",[PageLoader::class,"register"]);
